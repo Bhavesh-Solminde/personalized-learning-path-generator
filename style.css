@@ -1,0 +1,642 @@
+/* Color Theme Variables */
+:root {
+  --background: rgb(248, 249, 250);
+  --foreground: rgb(33, 37, 41);
+  --card: rgb(255, 255, 255);
+  --card-foreground: rgb(33, 37, 41);
+  --popover: rgb(255, 255, 255);
+  --popover-foreground: rgb(33, 37, 41);
+  --primary: rgb(74, 105, 189);
+  --primary-foreground: rgb(255, 255, 255);
+  --secondary: rgb(108, 117, 125);
+  --secondary-foreground: rgb(255, 255, 255);
+  --muted: rgb(233, 236, 239);
+  --muted-foreground: rgb(108, 117, 125);
+  --accent: rgb(212, 175, 55);
+  --accent-foreground: rgb(33, 37, 41);
+  --destructive: rgb(217, 83, 79);
+  --destructive-foreground: rgb(255, 255, 255);
+  --border: rgb(222, 226, 230);
+  --input: rgb(206, 212, 218);
+  --ring: rgb(74, 105, 189);
+  --chart-1: rgb(74, 105, 189);
+  --chart-2: rgb(91, 192, 222);
+  --chart-3: rgb(240, 173, 78);
+  --chart-4: rgb(92, 184, 92);
+  --chart-5: rgb(108, 117, 125);
+  --sidebar: rgb(255, 255, 255);
+  --sidebar-foreground: rgb(33, 37, 41);
+  --sidebar-primary: rgb(74, 105, 189);
+  --sidebar-primary-foreground: rgb(255, 255, 255);
+  --sidebar-accent: rgb(248, 249, 250);
+  --sidebar-accent-foreground: rgb(33, 37, 41);
+  --sidebar-border: rgb(222, 226, 230);
+  --sidebar-ring: rgb(74, 105, 189);
+  --font-sans: Inter;
+  --font-serif: Lora;
+  --font-mono: Fira Code;
+  --radius: 0.5rem;
+  --shadow-2xs: 0px 4px 10px 0px hsl(0 0% 0% / 0.05);
+  --shadow-xs: 0px 4px 10px 0px hsl(0 0% 0% / 0.05);
+  --shadow-sm: 0px 4px 10px 0px hsl(0 0% 0% / 0.1),
+    0px 1px 2px -1px hsl(0 0% 0% / 0.1);
+  --shadow: 0px 4px 10px 0px hsl(0 0% 0% / 0.1),
+    0px 1px 2px -1px hsl(0 0% 0% / 0.1);
+  --shadow-md: 0px 4px 10px 0px hsl(0 0% 0% / 0.1),
+    0px 2px 4px -1px hsl(0 0% 0% / 0.1);
+  --shadow-lg: 0px 4px 10px 0px hsl(0 0% 0% / 0.1),
+    0px 4px 6px -1px hsl(0 0% 0% / 0.1);
+  --shadow-xl: 0px 4px 10px 0px hsl(0 0% 0% / 0.1),
+    0px 8px 10px -1px hsl(0 0% 0% / 0.1);
+  --shadow-2xl: 0px 4px 10px 0px hsl(0 0% 0% / 0.25);
+  --tracking-normal: normal;
+  --spacing: 0.25rem;
+}
+
+.dark {
+  --background: rgb(18, 18, 18);
+  --foreground: rgb(224, 224, 224);
+  --card: rgb(30, 30, 30);
+  --card-foreground: rgb(224, 224, 224);
+  --popover: rgb(37, 37, 37);
+  --popover-foreground: rgb(224, 224, 224);
+  --primary: rgb(108, 142, 239);
+  --primary-foreground: rgb(18, 18, 18);
+  --secondary: rgb(138, 154, 157);
+  --secondary-foreground: rgb(18, 18, 18);
+  --muted: rgb(44, 44, 44);
+  --muted-foreground: rgb(160, 160, 160);
+  --accent: rgb(224, 197, 110);
+  --accent-foreground: rgb(18, 18, 18);
+  --destructive: rgb(229, 115, 115);
+  --destructive-foreground: rgb(18, 18, 18);
+  --border: rgb(51, 51, 51);
+  --input: rgb(44, 44, 44);
+  --ring: rgb(108, 142, 239);
+  --chart-1: rgb(108, 142, 239);
+  --chart-2: rgb(100, 213, 240);
+  --chart-3: rgb(245, 201, 110);
+  --chart-4: rgb(114, 201, 114);
+  --chart-5: rgb(138, 154, 157);
+  --sidebar: rgb(30, 30, 30);
+  --sidebar-foreground: rgb(224, 224, 224);
+  --sidebar-primary: rgb(108, 142, 239);
+  --sidebar-primary-foreground: rgb(18, 18, 18);
+  --sidebar-accent: rgb(44, 44, 44);
+  --sidebar-accent-foreground: rgb(224, 224, 224);
+  --sidebar-border: rgb(51, 51, 51);
+  --sidebar-ring: rgb(108, 142, 239);
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+  line-height: 1.6;
+  letter-spacing: var(--tracking-normal);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Header Styles */
+.header {
+  background-color: var(--card);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo {
+  font-size: 2rem;
+}
+
+.nav-brand h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 0;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--foreground);
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary);
+}
+
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary);
+  border-radius: 2px;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: var(--muted);
+}
+
+/* Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  font-weight: 500;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.btn-primary:hover {
+  background-color: color-mix(in srgb, var(--primary) 90%, black);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+  color: var(--secondary-foreground);
+}
+
+.btn-secondary:hover {
+  background-color: color-mix(in srgb, var(--secondary) 90%, black);
+}
+
+.btn-large {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+}
+
+/* Hero Section */
+.hero-section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  color: var(--foreground);
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  color: var(--muted-foreground);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.hero-image {
+  position: relative;
+  height: 400px;
+}
+
+.learning-illustration {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+.floating-card {
+  position: absolute;
+  background-color: var(--card);
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  font-weight: 600;
+  color: var(--foreground);
+  animation: float 3s ease-in-out infinite;
+}
+
+.card-1 {
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.card-2 {
+  top: 20%;
+  right: 10%;
+  animation-delay: 0.5s;
+}
+
+.card-3 {
+  bottom: 30%;
+  left: 15%;
+  animation-delay: 1s;
+}
+
+.card-4 {
+  bottom: 10%;
+  right: 15%;
+  animation-delay: 1.5s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Dashboard Section */
+.dashboard-section {
+  padding: 4rem 2rem;
+  background-color: var(--muted);
+}
+
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--foreground);
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.dashboard-card {
+  background-color: var(--card);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.dashboard-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--foreground);
+}
+
+/* Recommendations */
+.recommendations-card {
+  grid-row: span 2;
+}
+
+.recommendation-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.recommendation-item:hover {
+  background-color: var(--muted);
+}
+
+.rec-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.rec-content h4 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--foreground);
+}
+
+.rec-content p {
+  color: var(--muted-foreground);
+  margin-bottom: 0.5rem;
+}
+
+.rec-difficulty {
+  font-size: 0.875rem;
+  padding: 0.25rem 0.5rem;
+  background-color: var(--accent);
+  color: var(--accent-foreground);
+  border-radius: calc(var(--radius) / 2);
+  display: inline-block;
+}
+
+/* Progress Chart */
+.chart-item {
+  display: grid;
+  grid-template-columns: 1fr 2fr auto;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.chart-label {
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+.progress-bar {
+  background-color: var(--muted);
+  border-radius: calc(var(--radius) / 2);
+  height: 8px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  background-color: var(--primary);
+  height: 100%;
+  border-radius: calc(var(--radius) / 2);
+  transition: width 0.8s ease;
+}
+
+.progress-value {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* Performance Metrics */
+.performance-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.metric {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--muted);
+  border-radius: var(--radius);
+}
+
+.metric-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.metric-label {
+  color: var(--muted-foreground);
+  font-weight: 500;
+}
+
+/* Courses Section */
+.courses-section {
+  padding: 4rem 2rem;
+}
+
+.courses-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.course-filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.filter-btn {
+  background-color: transparent;
+  border: 1px solid var(--border);
+  color: var(--foreground);
+  padding: 0.5rem 1.5rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  border-color: var(--primary);
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.course-card {
+  background-color: var(--card);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.course-image {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.course-card h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--foreground);
+}
+
+.course-card p {
+  color: var(--muted-foreground);
+  margin-bottom: 1.5rem;
+}
+
+.course-meta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.difficulty {
+  padding: 0.25rem 0.5rem;
+  border-radius: calc(var(--radius) / 2);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.difficulty.beginner {
+  background-color: var(--chart-4);
+  color: white;
+}
+
+.difficulty.intermediate {
+  background-color: var(--chart-3);
+  color: white;
+}
+
+.difficulty.advanced {
+  background-color: var(--destructive);
+  color: white;
+}
+
+.duration {
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--card);
+  border-top: 1px solid var(--border);
+  padding: 3rem 2rem 1rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-brand h3 {
+  color: var(--primary);
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: var(--muted-foreground);
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--primary);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted-foreground);
+}
+
+/* Utility Classes */
+.hidden {
+  display: none !important;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

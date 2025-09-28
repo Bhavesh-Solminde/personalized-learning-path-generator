@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Personalized Learning Path Generator - AI-powered recommendations for your learning journey"
+    />
+    <title>🎓 Personalized Learning Path Generator</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="responsive.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <div class="nav-container">
+          <div class="nav-brand">
+            <span class="logo">🎓</span>
+            <h1>LearnPath AI</h1>
+          </div>
+          <div class="nav-menu">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#dashboard" class="nav-link">Dashboard</a>
+            <a href="#courses" class="nav-link">Courses</a>
+            <a href="#progress" class="nav-link">Progress</a>
+            <a href="#profile" class="nav-link">Profile</a>
+          </div>
+          <div class="nav-actions">
+            <button class="theme-toggle" id="themeToggle">🌙</button>
+            <button class="btn btn-primary">Get Started</button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section id="home" class="hero-section">
+        <div class="hero-container">
+          <div class="hero-content">
+            <h1 class="hero-title">
+              Your Personalized Learning Journey Starts Here
+            </h1>
+            <p class="hero-description">
+              AI-powered recommendations that adapt to your interests,
+              performance, and learning style. Get curated learning paths just
+              like Coursera and LeetCode, but tailored specifically for you.
+            </p>
+            <div class="hero-actions">
+              <button class="btn btn-primary btn-large" id="startAssessment">
+                Start Assessment
+              </button>
+              <button class="btn btn-secondary btn-large">View Demo</button>
+            </div>
+          </div>
+          <div class="hero-image">
+            <div class="learning-illustration">
+              <div class="floating-card card-1">📚 Mathematics</div>
+              <div class="floating-card card-2">💻 Programming</div>
+              <div class="floating-card card-3">🎨 Design</div>
+              <div class="floating-card card-4">📊 Data Science</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="dashboard" class="dashboard-section">
+        <div class="dashboard-container">
+          <h2 class="section-title">Your Learning Dashboard</h2>
+          <div class="dashboard-grid">
+            <div class="dashboard-card recommendations-card">
+              <h3>📋 Recommended Next Topics</h3>
+              <div class="recommendations-list" id="recommendationsList">
+                <div class="recommendation-item">
+                  <div class="rec-icon">🔢</div>
+                  <div class="rec-content">
+                    <h4>Advanced Calculus</h4>
+                    <p>Based on your strong algebra performance</p>
+                    <div class="rec-difficulty">Difficulty: Intermediate</div>
+                  </div>
+                </div>
+                <div class="recommendation-item">
+                  <div class="rec-icon">🐍</div>
+                  <div class="rec-content">
+                    <h4>Python Data Structures</h4>
+                    <p>Perfect next step after basic Python</p>
+                    <div class="rec-difficulty">Difficulty: Beginner</div>
+                  </div>
+                </div>
+                <div class="recommendation-item">
+                  <div class="rec-icon">📊</div>
+                  <div class="rec-content">
+                    <h4>Statistical Analysis</h4>
+                    <p>Combines math and programming skills</p>
+                    <div class="rec-difficulty">Difficulty: Advanced</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="dashboard-card progress-card">
+              <h3>📈 Progress Overview</h3>
+              <div class="progress-chart" id="progressChart">
+                <div class="chart-item">
+                  <div class="chart-label">Mathematics</div>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="width: 85%"></div>
+                  </div>
+                  <div class="progress-value">85%</div>
+                </div>
+                <div class="chart-item">
+                  <div class="chart-label">Programming</div>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="width: 70%"></div>
+                  </div>
+                  <div class="progress-value">70%</div>
+                </div>
+                <div class="chart-item">
+                  <div class="chart-label">Data Science</div>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="width: 45%"></div>
+                  </div>
+                  <div class="progress-value">45%</div>
+                </div>
+                <div class="chart-item">
+                  <div class="chart-label">Design</div>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="width: 60%"></div>
+                  </div>
+                  <div class="progress-value">60%</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="dashboard-card performance-card">
+              <h3>🎯 Performance Insights</h3>
+              <div class="performance-metrics">
+                <div class="metric">
+                  <div class="metric-value">94%</div>
+                  <div class="metric-label">Accuracy Rate</div>
+                </div>
+                <div class="metric">
+                  <div class="metric-value">12</div>
+                  <div class="metric-label">Courses Completed</div>
+                </div>
+                <div class="metric">
+                  <div class="metric-value">47h</div>
+                  <div class="metric-label">Study Time</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="courses" class="courses-section">
+        <div class="courses-container">
+          <h2 class="section-title">Available Courses</h2>
+          <div class="course-filters">
+            <button class="filter-btn active" data-filter="all">
+              All Courses
+            </button>
+            <button class="filter-btn" data-filter="beginner">Beginner</button>
+            <button class="filter-btn" data-filter="intermediate">
+              Intermediate
+            </button>
+            <button class="filter-btn" data-filter="advanced">Advanced</button>
+          </div>
+          <div class="courses-grid" id="coursesGrid">
+            <div class="course-card" data-difficulty="beginner">
+              <div class="course-image">📚</div>
+              <h4>Introduction to Programming</h4>
+              <p>Learn the fundamentals of programming with Python</p>
+              <div class="course-meta">
+                <span class="difficulty beginner">Beginner</span>
+                <span class="duration">6 weeks</span>
+              </div>
+              <button class="btn btn-primary">Start Course</button>
+            </div>
+            <div class="course-card" data-difficulty="intermediate">
+              <div class="course-image">🔢</div>
+              <h4>Advanced Mathematics</h4>
+              <p>Calculus, Linear Algebra, and Statistics</p>
+              <div class="course-meta">
+                <span class="difficulty intermediate">Intermediate</span>
+                <span class="duration">8 weeks</span>
+              </div>
+              <button class="btn btn-primary">Start Course</button>
+            </div>
+            <div class="course-card" data-difficulty="advanced">
+              <div class="course-image">🤖</div>
+              <h4>Machine Learning</h4>
+              <p>Deep dive into ML algorithms and applications</p>
+              <div class="course-meta">
+                <span class="difficulty advanced">Advanced</span>
+                <span class="duration">12 weeks</span>
+              </div>
+              <button class="btn btn-primary">Start Course</button>
+            </div>
+            <div class="course-card" data-difficulty="intermediate">
+              <div class="course-image">🎨</div>
+              <h4>UI/UX Design</h4>
+              <p>Create beautiful and functional user interfaces</p>
+              <div class="course-meta">
+                <span class="difficulty intermediate">Intermediate</span>
+                <span class="duration">10 weeks</span>
+              </div>
+              <button class="btn btn-primary">Start Course</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <span class="logo">🎓</span>
+            <h3>LearnPath AI</h3>
+          </div>
+          <div class="footer-links">
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="#privacy">Privacy</a>
+            <a href="#terms">Terms</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 LearnPath AI. Personalized learning for everyone.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
